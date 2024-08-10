@@ -30,6 +30,9 @@ public class Main {
 		driver.findElement(By.id("password")).sendKeys("dein passwort");
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//button[text()='Anmelden']")).click();
+		//driver.findElement(By.className("ck ck-editor__main")).click();
+		//driver.findElement(By.className("ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred")).clear();
+		//driver.findElement(By.cssSelector("<div>.<class ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred ")).clear();
 		
 	}
 	public static void interruptUntilLoad() {
