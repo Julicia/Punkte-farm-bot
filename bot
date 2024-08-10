@@ -19,7 +19,7 @@ public class Main {
 		FirefoxOptions option = new FirefoxOptions();
 		//option.addArguments("-headless");
 		driver = new FirefoxDriver(); //option muss in argument rein
-		driver.get("https://studip.uni-hannover.de/wiki.php?cid=879358e3311a23416f0c2cd0ceb631b1&wiki_comments=icon&keyword=Julia&view=edit"); //hier muss link zu dein wiki rein lol
+		driver.get(""); //hier muss link zu dein wiki rein lol
 
 		//driver.get("https://studip.uni-hannover.de/");
 		interruptUntilLoad();
