@@ -1,0 +1,40 @@
+package punkte_farmen;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import org.openqa.selenium.WebElement;
+
+public class Main {
+
+	static FirefoxDriver driver;
+
+	public static void main(String[] args) throws InterruptedException {
+		FirefoxOptions option = new FirefoxOptions();
+		//option.addArguments("-headless");
+		driver = new FirefoxDriver(); //option muss in argument rein
+		driver.get("https://studip.uni-hannover.de/wiki.php?cid=879358e3311a23416f0c2cd0ceb631b1&wiki_comments=icon&keyword=Julia&view=edit"); //hier muss link zu dein wiki rein lol
+
+		//driver.get("https://studip.uni-hannover.de/");
+		interruptUntilLoad();
+		
+		driver.findElement(By.className("login_link")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.id("username")).sendKeys("dein login");
+		driver.findElement(By.id("password")).sendKeys("dein passwort");
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//button[text()='Anmelden']")).click();
+		
+	}
+	public static void interruptUntilLoad() {
+        System.out.println("Interrupting until page load..");
+        while (!((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete")) {
+        }
+    }
+}
